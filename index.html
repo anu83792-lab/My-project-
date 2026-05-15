@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anu Fashion - Indian Style</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
 
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-flex">
+                <div class="logo">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Anu<span>Fashion</span> <small>🇮🇳</small></span>
+                </div>
+
+                
+                <ul class="nav-menu">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-icons">
+                    <i class="fas fa-search"></i>
+                    <i class="far fa-heart"></i>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <div class="nav-icons">
+                <a href="login.html" class="login-btn">
+                    <i class="fas fa-user"></i> Login
+                </a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="festival-badge">
+                <i class="fas fa-diwali"></i> Festival Special
+            </div>
+            <h2>Trendy Fashion <span>For Everyone</span></h2>
+            <p>Flat 50% off on ethnic wear + Extra 10% off on prepaid orders</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="location.href='#shop'">Shop Now</button>
+                <button class="btn btn-secondary">View Offers</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="categories" class="section">
+    <div class="container">
+        <h2 class="section-title">Shop by <span>Category</span></h2>
+        
+        <div class="category-grid">
+            <div class="category-card" onclick="filterProducts('women')">
+                <i class="fas fa-female"></i>
+                <h3>Women's Wear</h3>
+                <p>Ethnic • Western • Fusion</p>
+            </div>
+            <div class="category-card" onclick="filterProducts('men')">
+                <i class="fas fa-male"></i>
+                <h3>Men's Wear</h3>
+                <p>Kurta • Shirt • Jeans</p>
+            </div>
+            <div class="category-card" onclick="filterProducts('kids')">
+                <i class="fas fa-child"></i>
+                <h3>Kids Corner</h3>
+                <p>Traditional • Casual</p>
+            </div>
+            <div class="category-card" onclick="filterProducts('accessories')">
+                <i class="fas fa-clock"></i>
+                <h3>Accessories</h3>
+                <p>Jewelry • Bags • Watches</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="shop" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Featured <span>Products</span></h2>
+            <select id="sortProducts" class="sort-select">
+                <option value="default">Sort By</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="popular">Popularity</option>
+            </select>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+        </div>
+    </div>
+</section>
+<section class="offer">
+    <div class="container">
+        <div class="offer-box">
+            <div class="offer-content">
+                <span class="offer-tag">🇮🇳 Great Indian Festival</span>
+                <h2>FLAT ₹500 OFF</h2>
+                <p>On orders above ₹2999</p>
+                <p class="offer-code">Use code: ANU500</p>
+                <button class="btn btn-primary">Shop Now</button>
+            </div>
+            <div class="offer-image">
+                <i class="fas fa-gift"></i>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Anu<span>Fashion</span></span>
+                </div>
+                <p>India's fastest growing fashion store</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-rupay"></i>
+                    <i class="fab fa-google-pay"></i>
+                    <i class="fab fa-paytm"></i>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#" onclick="filterProducts('women')">Women's Wear</a></li>
+                    <li><a href="#" onclick="filterProducts('men')">Men's Wear</a></li>
+                    <li><a href="#" onclick="filterProducts('kids')">Kids Wear</a></li>
+                    <li><a href="#" onclick="filterProducts('accessories')">Accessories</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> care@anufashion.in</p>
+                <p><i class="fas fa-map-marker"></i> Hyderabad, India</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Anu Fashion. All rights reserved. Made with ❤️ in India</p>
+        </div>
+    </div>
+</footer>
+<div class="cart-modal" id="cartModal">
+    <div class="cart-content">
+        <div class="cart-header">
+            <h3>Your Cart <i class="fas fa-shopping-bag"></i></h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItems">
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total Amount:</strong> 
+                <span class="total-amount" id="cartTotal">₹0</span>
+            </div>
+            <button class="btn btn-primary" onclick="checkout()">Proceed to Checkout</button>
+            <p class="secure-payment"><i class="fas fa-lock"></i> Secure Payment</p>
+        </div>
+    </div>
+</div>
+<div id="notification" class="notification"></div>
+<script src="script.js"></script>
+</body>
+</html>
